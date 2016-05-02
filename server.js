@@ -17,9 +17,6 @@ server.use(prerender.httpHeaders());
 // server.use(prerender.inMemoryHtmlCache());
 // server.use(prerender.s3HtmlCache());
 
-//to configure the directory and cache time, use this env variables:
-// $ export CACHE_ROOT_DIR=/you/directory/for/cache
-// $ export CACHE_LIVE_TIME=10000 (in seconds)
-server.use(require('prerender-file-cache'));
+server.use(require('prerender-filesystem-cache'));
 
 server.start();
