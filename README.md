@@ -12,7 +12,7 @@ Prerender adheres to google's `_escaped_fragment_` proposal, which we recommend 
 - If you use hash urls (#), change them to the hash-bang (#!)
 - That's it! Perfect SEO on javascript pages.
 
-Prerender includes lots of plugins if you are running your own server, for example using Amazon S3 to [cache your prerendered HTML](#s3-html-cache).
+Prerender includes lots of plugins if you are running your own server, such as using Amazon S3 to [cache your prerendered HTML](#s3-html-cache).
 Prerender also starts multiple phantomjs processes to maximize throughput.
 
 
@@ -85,7 +85,7 @@ If you are running the prerender service locally. Make sure you set your middlew
 
 Prerender will now be running on http://localhost:3000. If you wanted to start a web app that ran on say, http://localhost:8000, you can now visit the URL http://localhost:3000/http://localhost:8000 to see how your app would render in Prerender.
 
-Keep in mind you will see 504s for relative URLs because the actual domain on that request is your prerender server. This isn't really an issue because once you proxy that request through the middleware, then the domain will be your website and those requests won't be sent to the prerender server.  For instance if you want to see your relative URLS working visit `http://localhost:8000?_escaped_fragment_=`
+Keep in mind that you will see 504s for relative URLs because the actual domain on that request is your prerender server. This isn't really an issue because once you proxy that request through the middleware, then the domain will be your website, and those requests won't be sent to the prerender server.  For instance, if you want to see your relative URLS working visit `http://localhost:8000?_escaped_fragment_=`
 
 ## Deploying your own on heroku
 
@@ -212,7 +212,7 @@ var server = prerender({
 server.start();
 ```
 
-Number of milliseconds to wait after the number of requests/ajax calls in flight reaches zero. Javascript execution begins after this in order to pull the HTML off of the page. You can also set the environment variable of `WAIT_AFTER_LAST_REQUEST` instead of passing in the `waitAfterLastRequest` parameter. `Default: 500`
+Number of milliseconds to wait after the number of requests/ajax calls in flight reaches zero. Javascript execution begins after this to pull the HTML off of the page. You can also set the environment variable of `WAIT_AFTER_LAST_REQUEST` instead of passing in the `waitAfterLastRequest` parameter. `Default: 500`
 
 ### jsTimeout
 ```
